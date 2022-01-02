@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/bmi_calculator.dart';
 import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -196,9 +197,11 @@ class _InputPageState extends State<InputPage> {
             ),
             BottomButton(
               onTap: () {
+                BmiCalculator bmi = BmiCalculator(height, weight);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ResultsPage()),
+                  MaterialPageRoute(
+                      builder: (context) => ResultsPage(bmi: bmi)),
                 );
               },
               buttonTitle: 'CALCULATE YOUR BMI',

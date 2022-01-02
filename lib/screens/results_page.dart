@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/bmi_calculator.dart';
 import 'package:flutter/material.dart';
 
 import '../components/bottom_button.dart';
@@ -5,7 +6,9 @@ import '../constants.dart';
 import '../components/custom_card_widget.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({Key? key}) : super(key: key);
+  const ResultsPage({Key? key, required this.bmi}) : super(key: key);
+
+  final BmiCalculator bmi;
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +40,12 @@ class ResultsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text(
-                      'NORMAL',
+                    Text(
+                      bmi.getResult(),
                       style: kResultTextStyle,
                     ),
-                    const Text(
-                      '22.1',
+                    Text(
+                      bmi.calculateBMI().toStringAsFixed(1),
                       style: kBMITextStyle,
                     ),
                     Column(
@@ -62,8 +65,8 @@ class ResultsPage extends StatelessWidget {
                     ),
                     Container(
                       margin: const EdgeInsets.only(left: 15.0, right: 15.0),
-                      child: const Text(
-                        'You have a normal body weight. Good Job!!',
+                      child: Text(
+                        bmi.getInterpretation(),
                         textAlign: TextAlign.center,
                         style: kBodyTextStyle,
                       ),
