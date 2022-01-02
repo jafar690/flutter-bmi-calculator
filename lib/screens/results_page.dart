@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'components/bottom_button.dart';
-import 'components/constants.dart';
-import 'components/custom_card_widget.dart';
+import '../components/bottom_button.dart';
+import '../constants.dart';
+import '../components/custom_card_widget.dart';
 
 class ResultsPage extends StatelessWidget {
   const ResultsPage({Key? key}) : super(key: key);

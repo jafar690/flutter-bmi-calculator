@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'constants.dart';
+import '../constants.dart';
 
 class GenderCardWidget extends StatelessWidget {
   const GenderCardWidget({Key? key, required this.icon, required this.text})
